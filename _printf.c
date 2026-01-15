@@ -11,11 +11,14 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, printed = 0, j;
 	spec_t specs[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
-		{0, NULL}
-	};
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_percent},
+	{'d', print_int},
+	{'i', print_int},
+	{0, NULL}
+};
+
 
 	if (format == NULL)
 		return (-1);
