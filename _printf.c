@@ -34,7 +34,10 @@ int _printf(const char *format, ...)
 
 		i++;
 		if (format[i] == '\0')
-			break;
+		{
+			va_end(args);
+			return (-1);
+		}
 
 		j = 0;
 		while (specs[j].spec)
